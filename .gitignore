@@ -1,0 +1,88 @@
+# ignore word doc
+/docs/*.docx
+  
+# ignore phpstorm files
+/.idea
+*.DS_Store
+  
+# ignore our admin_toolbox stuff if it was used
+/admin_toolbox
+
+# Ignore all not in specifically included sub folders
+/*
+!/sfcrel/
+!/app/
+!/docs/
+!/js/
+!/lib/
+!/var/
+!/shell/
+!/.gitignore
+!/composer.json
+!/modman
+# Don't ignore build scripts
+!/build.xml
+!/phpunit.xml*
+!/phpdox.xml*
+
+# Don't ignore readme files
+!/*.md
+
+# Allow shell scripts for kount ext
+/shell/*
+!/shell/bv_*.php
+
+# Needed for Magento pacakge configuration file
+/var/*
+!/var/connect/
+
+# ignore all in js, except module files for this module
+/js/*
+!/js/sezzle/
+
+# Ignore lib other than Sezzle
+/lib/*
+  
+# Ignore all in app, except code & etc
+# Ignore all in app/code except local/Sezzle
+/app/*
+!/app/code/
+!/app/etc/
+!/app/design/
+
+# Ignore all in app/code except Sezzle
+!/app/code/
+/app/code/core
+/app/code/local
+/app/etc/community
+/app/code/community/*
+!/app/code/community/Sezzle
+!/app/code/community/Sezzle/*
+
+# Ignore all of app/etc except our specific module files
+/app/etc/*
+!/app/etc/modules/
+/app/etc/modules/*
+!/app/etc/modules/Sezzle_Sezzlepay.xml
+
+#Ignore all of app/design except for our files
+/app/design/*
+!/app/design/frontend/
+/app/design/frontend/*
+!/app/design/frontend/base/
+!/app/design/frontend/base/default/
+/app/design/frontend/base/default/*
+!/app/design/frontend/base/default/layout/
+/app/design/frontend/base/default/layout/*
+!/app/design/frontend/base/default/layout/sezzlepay.xml
+!/app/design/adminhtml/default/default/layout/sezzlepay.xml
+!/app/design/frontend/base/default/template/
+/app/design/frontend/base/default/template/*
+!/app/design/frontend/base/default/template/sezzlepay/
+!/app/design/frontend/base/default/template/sezzlepay/*
+!/app/design/adminhtml/default/default/template/sezzlepay/
+!/app/design/adminhtml/default/default/template/sezzlepay/*
+composer.json
+
+!internal
+!docker-compose.yml

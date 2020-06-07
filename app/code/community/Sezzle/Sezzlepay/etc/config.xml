@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<!--/**
+* Sezzlepay config
+*
+* @category   Sezzle
+* @package    Sezzle_Sezzlepay
+* @author     Sezzle Team
+*/-->
+<config>
+    <modules>
+        <Sezzle_Sezzlepay>
+            <version>4.0.3</version>
+        </Sezzle_Sezzlepay>
+    </modules>
+    <global>
+        <blocks>
+            <sezzle_sezzlepay>
+                <class>Sezzle_Sezzlepay_Block</class>
+            </sezzle_sezzlepay>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Sezzle_Sezzlepay_Block_Adminhtml_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <models>
+            <sezzle_sezzlepay>
+                <class>Sezzle_Sezzlepay_Model</class>
+            </sezzle_sezzlepay>
+        </models>
+        <helpers>
+            <sezzle_sezzlepay>
+                <class>Sezzle_Sezzlepay_Helper</class>
+            </sezzle_sezzlepay>
+        </helpers>
+        <fieldsets>
+            <sales_convert_quote_payment>
+                <sezzle_reference_id>
+                    <to_order_payment>*</to_order_payment>
+                </sezzle_reference_id>
+            </sales_convert_quote_payment>
+        </fieldsets>
+        <resources>
+            <sezzlepay_setup>
+                <setup>
+                    <module>Sezzle_Sezzlepay</module>
+                    <class>Mage_Sales_Model_Resource_Setup</class>
+                </setup>
+            </sezzlepay_setup>
+        </resources>
+    </global>
+    <default>
+        <payment>
+            <sezzlepay>
+                <title>Sezzle Pay PayLater 0% Interest</title>
+                <active>1</active>
+                <model>sezzle_sezzlepay/sezzlepay</model>
+                <order_status>processing</order_status>
+                <payment_action>authorize_capture</payment_action>
+                <public_key backend_model="adminhtml/system_config_backend_encrypted"/>
+                <private_key backend_model="adminhtml/system_config_backend_encrypted"/>
+            </sezzlepay>
+        </payment>
+    </default>
+    <frontend>
+        <layout>
+            <updates>
+                <sezzlepay>
+                    <file>sezzlepay.xml</file>
+                </sezzlepay>
+            </updates>
+        </layout>
+        <routers>
+            <sezzlepay>
+                <use>standard</use>
+                <args>
+                    <module>Sezzle_Sezzlepay</module>
+                    <frontName>sezzlepay</frontName>
+                </args>
+            </sezzlepay>
+        </routers>
+        <translate>
+            <modules>
+                <Sezzle_Sezzlepay>
+                    <files>
+                        <default>Sezzle_Sezzlepay.csv</default>
+                    </files>
+                </Sezzle_Sezzlepay>
+            </modules>
+        </translate>
+        <events>
+            <payment_method_is_active>
+                <observers>
+                    <hide_gateway>
+                        <class>sezzle_sezzlepay/observer</class>
+                        <method>hideGateway</method>
+                    </hide_gateway>
+                </observers>
+            </payment_method_is_active>
+        </events>
+    </frontend>
+    <admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<sezzle_sezzlepay before="Mage_Adminhtml">Sezzle_Sezzlepay_Adminhtml</sezzle_sezzlepay>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+        
+	</admin>
+    <adminhtml>
+    <layout>
+            <updates>
+                <sezzlepay>
+                    <file>sezzlepay.xml</file>
+                </sezzlepay>
+            </updates>
+        </layout>
+    </adminhtml>
+    <crontab>
+        <jobs>
+            <sezzle_capture_payment>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>sezzle_sezzlepay/observer::capturePayment</model></run>
+            </sezzle_capture_payment>
+        </jobs>
+    </crontab>
+</config>

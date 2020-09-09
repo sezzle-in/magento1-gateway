@@ -1,13 +1,13 @@
 # Sezzle Extension for Magento 1
 
 ## Introduction
-This document will help you in installing `Sezzle's Magento` extension. This extension is a certified one and listed [here](https://marketplace.magento.com/sezzle-sezzle-sezzlepay.html) in the marketplace. The plugin can also be downloaded from [github](https://github.com/sezzle-in/magento1-gateway/releases/latest/download/sezzle-magento1.zip).
+This document will help you in installing `Sezzle's Magento` extension. This extension is a certified one and listed [here](https://marketplace.magento.com/sezzle-sezzle-sezzlepay.html) in the marketplace. The plugin can also be downloaded from [Sezzle India's Github repository](https://github.com/sezzle-in/magento1-gateway/releases/latest/download/sezzle-magento1.zip).
 
 
 ## How to install the extension?
 > For all purposes assume [Magento] as your root Magento directory.
 
-* Download the .zip or tar.gz file from [github](https://github.com/sezzle-in/magento1-gateway/releases/latest/download/sezzle-magento1.zip).
+* Download the extension from [Sezzle India's Github repository](https://github.com/sezzle-in/magento1-gateway/releases/latest/download/sezzle-magento1.zip)
 * Unzip the file and follow the following instructions.
 * Copy all files in the extracted folder's: `/app/code/community/` to: `[MAGENTO]/app/code/community`
 * Copy all files in the extracted folder's `/app/design/frontend/base/default/layout/` to: `[MAGENTO]/app/design/frontend/base/default/layout`
@@ -19,7 +19,7 @@ This document will help you in installing `Sezzle's Magento` extension. This ext
 
 ## How to upgrade the extension?
 
-* Download the .zip or tar.gz file from Sezzle's github repository.
+* Download the extension from [Sezzle India's Github repository](https://github.com/sezzle-in/magento1-gateway/releases/latest/download/sezzle-magento1.zip)
 * Unzip the file and follow the following instructions.
 * Copy the `app` directory from unzipped folder to the `Magento` root.
 * Login to `Magento` Admin and navigate to `System > Cache Management`.

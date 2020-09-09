@@ -10,6 +10,7 @@
 
 # Ignore all not in specifically included sub folders
 /*
+!/.github
 !/sfcrel/
 !/app/
 !/docs/

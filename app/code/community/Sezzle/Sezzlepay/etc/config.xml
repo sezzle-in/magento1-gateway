@@ -59,6 +59,8 @@
                 <payment_action>authorize_capture</payment_action>
                 <public_key backend_model="adminhtml/system_config_backend_encrypted"/>
                 <private_key backend_model="adminhtml/system_config_backend_encrypted"/>
+                <widget_pdp>1</widget_pdp>
+                <widget_cart>1</widget_cart>
             </sezzlepay>
         </payment>
     </default>

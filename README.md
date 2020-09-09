@@ -1,12 +1,13 @@
 # Sezzle Extension for Magento 1
 
 ## Introduction
-This document will help you in installing `Sezzle's Magento` extension. This extension is a certified one and listed [here](https://marketplace.magento.com/sezzle-sezzle-sezzlepay.html) in the marketplace. The plugin can also be downloaded from [github](https://github.com/sezzle/sezzle-magento).
+This document will help you in installing `Sezzle's Magento` extension. This extension is a certified one and listed [here](https://marketplace.magento.com/sezzle-sezzle-sezzlepay.html) in the marketplace. The plugin can also be downloaded from [github](https://github.com/sezzle/magento1-gateway/releases/latest/download/sezzle-magento1.zip).
 
-### For all purposes assume [Magento] as your root Magento directory.
+
 ## How to install the extension?
+> For all purposes assume [Magento] as your root Magento directory.
 
-* Download the .zip or tar.gz file from `Sezzle's` github repository.
+* Download the .zip or tar.gz file from [github](https://github.com/sezzle/magento1-gateway/releases/latest/download/sezzle-magento1.zip).
 * Unzip the file and follow the following instructions.
 * Copy all files in the extracted folder's: `/app/code/community/` to: `[MAGENTO]/app/code/community`
 * Copy all files in the extracted folder's `/app/design/frontend/base/default/layout/` to: `[MAGENTO]/app/design/frontend/base/default/layout`
@@ -32,13 +33,9 @@ This document will help you in installing `Sezzle's Magento` extension. This ext
 * Configure the plugin as follows:
     * Set `Enabled` to `yes`.
     * Set `Merchant Id` as received from `Business` section of `Sezzle Merchant Dashboard`.
-    * Set `Api Mode` to either `Sandbox/Test` or `Live`.
-    * Set `Payment from Applicable Countries` to `Specific Countries`.
-    * Set `Payment from Specific Countries` to `United States` or `Canada` as Sezzle is currently available for US and Canada only.
-    * Set `Add Widget Script in PDP` to `Yes` for adding widget script in the Product Display Page which will help in enabling `Sezzle Widget` Modal in PDP.
-    * Set `Add Widget Script in Cart Page` to `Yes` for adding widget script in the Cart Page which will help in enabling `Sezzle Widget` Modal in Cart Page.
-    * Set `Private Key` as received from `API Keys` section of `Sezzle Merchant Dashboard`.
     * Set `Public Key` as received from your `API Keys` section of `Sezzle Merchant Dashboard`.
+    * Set `Private Key` as received from `API Keys` section of `Sezzle Merchant Dashboard`.
+    * Set `Api Mode` to either `Sandbox/Test` or `Live`.
     * Set `Payment Action` as `Authorize only` for doing payment authorization only and `Authorize and Capture` for doing authorization as well as payment capture.
 * Save the configuration.
 * Navigate to `System > Cache Management`.
@@ -46,7 +43,7 @@ This document will help you in installing `Sezzle's Magento` extension. This ext
 
 ### Your store is now ready to accept payments through Sezzle.
 
-## Frontend Functonality
+## Frontend Functionality
 
 * If you have correctly set up `Sezzle`, you will see `Sezzle` as a payment method in the checkout page.
 * Select `Sezzle` and move forward.

@@ -86,3 +86,6 @@ composer.json
 
 !internal
 !docker-compose.yml
+
+*.env
+!docker.sample.env
